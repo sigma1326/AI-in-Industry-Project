@@ -1,0 +1,676 @@
+Using device: cuda:0
+Class Weights: [np.float64(9.433568719759382), np.float64(99.04451410658307), np.float64(17.886377086045687), np.float64(332.8305439330544), np.float64(19.25783927891329), np.float64(112.57366548042705)]
+
+============================================================
+STARTING PIPELINE: CLSTM_25t_glove_100
+============================================================
+38296it [00:22, 1712.03it/s]
+9575it [00:04, 2037.46it/s]
+Phase 1: Running Sweep for CLSTM_25t_glove_100...
+Create sweep with ID: t0edik6x
+Sweep URL: https://wandb.ai/zagros-devs/Toxic%20Comment%20Detection/sweeps/t0edik6x
+Best model @ epoch 7
+Saving CLSTM_embed100_25t_sweep_rmsprop_0.001_0.001_128_[2, 3, 4]_last_epoch weights...
+Best model @ epoch 4
+Saving CLSTM_embed100_25t_sweep_adamW_0.0001_0.001_256_[3, 4, 5]_last_epoch weights...
+Best model @ epoch 4
+Saving CLSTM_embed100_25t_sweep_rmsprop_0.0005_0_512_[1, 3, 5]_last_epoch weights...
+Best model @ epoch 11
+Saving CLSTM_embed100_25t_sweep_rmsprop_0.005_0.001_256_[2, 3, 4]_last_epoch weights...
+Best model @ epoch 6
+Saving CLSTM_embed100_25t_sweep_adamW_0.001_0_50_[1, 3, 5, 7, 11]_last_epoch weights...
+Best model @ epoch 17
+Saving CLSTM_embed100_25t_sweep_adamW_0.0001_0.0001_50_[1, 2, 3]_last_epoch weights...
+Best model @ epoch 20
+Saving CLSTM_embed100_25t_sweep_adamW_0.0001_0.001_32_[1, 2, 3]_last_epoch weights...
+Best model @ epoch 11
+Saving CLSTM_embed100_25t_sweep_rmsprop_0.0001_0_100_[1, 2, 3]_last_epoch weights...
+Best model @ epoch 7
+Saving CLSTM_embed100_25t_sweep_rmsprop_0.001_0_100_[1, 2, 3, 5]_last_epoch weights...
+Best model @ epoch 20
+Saving CLSTM_embed100_25t_sweep_rmsprop_0.0001_1e-05_16_[1, 2, 3]_last_epoch weights...
+Best model @ epoch 20
+Saving CLSTM_embed100_25t_sweep_rmsprop_0.0001_0.001_32_[3, 4, 5]_last_epoch weights...
+Best model @ epoch 8
+Saving CLSTM_embed100_25t_sweep_rmsprop_0.005_0.0001_50_[1, 2, 3]_last_epoch weights...
+Best model @ epoch 19
+Saving CLSTM_embed100_25t_sweep_rmsprop_0.0001_1e-05_32_[1, 2, 3]_last_epoch weights...
+Best model @ epoch 6
+Saving CLSTM_embed100_25t_sweep_rmsprop_0.005_1e-05_16_[2, 3, 4]_last_epoch weights...
+Best model @ epoch 15
+Saving CLSTM_embed100_25t_sweep_rmsprop_0.0001_0.0001_50_[3, 5, 7]_last_epoch weights...
+Best model @ epoch 13
+Saving CLSTM_embed100_25t_sweep_rmsprop_0.005_0.0001_128_[3, 5, 7]_last_epoch weights...
+Best model @ epoch 6
+Saving CLSTM_embed100_25t_sweep_adamW_0.0005_0.0001_256_[1, 3, 5, 7]_last_epoch weights...
+Best model @ epoch 11
+Saving CLSTM_embed100_25t_sweep_rmsprop_0.0005_0.001_32_[1, 2, 3, 5]_last_epoch weights...
+Best model @ epoch 10
+Saving CLSTM_embed100_25t_sweep_adamW_0.0005_0.0001_16_[3, 5, 7]_last_epoch weights...
+Best model @ epoch 4
+Saving CLSTM_embed100_25t_sweep_adamW_0.005_1e-05_128_[2, 3, 4]_last_epoch weights...
+Phase 2: Fetching winning configs from W&B...
+--> Best Optimizer: rmsprop | LR: 0.005 | Num Channels: 50 | Kernel Sizes: [1, 2, 3]
+Phase 3: Finding optimal threshold...
+Loading weights from model_weights/CLSTM_embed100_25t_sweep_rmsprop_0.005_0.0001_50_[1, 2, 3]_best.pth...
+Testing Thresholds for Peak F1...
+Threshold: 0.50 | Macro F1: 0.2546
+Threshold: 0.52 | Macro F1: 0.2622
+Threshold: 0.54 | Macro F1: 0.2703
+Threshold: 0.56 | Macro F1: 0.2779
+Threshold: 0.58 | Macro F1: 0.2863
+Threshold: 0.60 | Macro F1: 0.2923
+Threshold: 0.62 | Macro F1: 0.2986
+Threshold: 0.64 | Macro F1: 0.3050
+Threshold: 0.66 | Macro F1: 0.3140
+Threshold: 0.68 | Macro F1: 0.3215
+Threshold: 0.70 | Macro F1: 0.3277
+Threshold: 0.72 | Macro F1: 0.3354
+Threshold: 0.74 | Macro F1: 0.3423
+Threshold: 0.76 | Macro F1: 0.3484
+Threshold: 0.78 | Macro F1: 0.3555
+Threshold: 0.80 | Macro F1: 0.3639
+Threshold: 0.82 | Macro F1: 0.3712
+Threshold: 0.84 | Macro F1: 0.3814
+Threshold: 0.86 | Macro F1: 0.3873
+Threshold: 0.88 | Macro F1: 0.3931
+Threshold: 0.90 | Macro F1: 0.4000
+Threshold: 0.92 | Macro F1: 0.4003
+Threshold: 0.94 | Macro F1: 0.4044
+Threshold: 0.96 | Macro F1: 0.3475
+Threshold: 0.98 | Macro F1: 0.1955
+========================================
+Best MODEL FOUND
+Optimal Threshold: 0.94
+Peak Macro F1: 0.4044
+--> Optimal Threshold: 0.94 (Peak F1: 0.4044)
+Phase 4: Training Final Model on 100% Data...
+127656it [01:04, 1980.22it/s]
+31915it [00:19, 1609.07it/s]
+Best model @ epoch 9
+Saving FINAL_CLSTM_25t_glove_100_last_epoch weights...
+Phase 5: Evaluating Final Model on Test Set...
+63978it [00:40, 1596.28it/s]
+
+==================================================
+INITIATING FINAL TEST EVALUATION
+Threshold: 0.9399999976158142
+==================================================
+
+OVERALL PERFORMANCE
+Macro AUROC: 0.9194
+Macro F1:    0.3779
+
+PER-CLASS BREAKDOWN
+Class           | AUROC   | Precision | Recall  | F1-Score
+-------------------------------------------------------
+toxic           | 0.8950  | 0.5870    | 0.5619  | 0.5742
+severe_toxic    | 0.9502  | 0.1129    | 0.6376  | 0.1919
+obscene         | 0.9058  | 0.5656    | 0.5364  | 0.5506
+threat          | 0.9390  | 0.0913    | 0.6114  | 0.1589
+insult          | 0.9058  | 0.4946    | 0.5197  | 0.5068
+identity_hate   | 0.9208  | 0.2021    | 0.4817  | 0.2848
+=======================================================
+SUCCESSFULLY COMPLETED: CLSTM_25t_glove_100
+
+============================================================
+STARTING PIPELINE: CLSTM_25t_glove_300
+============================================================
+38296it [00:21, 1758.95it/s]
+9575it [00:04, 2176.06it/s]
+Phase 1: Running Sweep for CLSTM_25t_glove_300...
+Create sweep with ID: oapq5k7m
+Sweep URL: https://wandb.ai/zagros-devs/Toxic%20Comment%20Detection/sweeps/oapq5k7m
+Best model @ epoch 2
+Saving CLSTM_embed300_25t_sweep_adamW_0.005_0_50_[1, 2, 3]_last_epoch weights...
+Best model @ epoch 4
+Saving CLSTM_embed300_25t_sweep_rmsprop_0.0001_0.001_128_[1, 3, 5]_last_epoch weights...
+Best model @ epoch 4
+Saving CLSTM_embed300_25t_sweep_adamW_0.0005_0.0001_32_[2, 3, 4]_last_epoch weights...
+Best model @ epoch 9
+Saving CLSTM_embed300_25t_sweep_adamW_0.0001_0_64_[1, 2, 3]_last_epoch weights...
+Best model @ epoch 7
+Saving CLSTM_embed300_25t_sweep_adamW_0.0005_0.001_32_[1, 3, 5]_last_epoch weights...
+Best model @ epoch 5
+Saving CLSTM_embed300_25t_sweep_rmsprop_0.001_1e-05_100_[1, 2, 3]_last_epoch weights...
+Best model @ epoch 4
+Saving CLSTM_embed300_25t_sweep_adamW_0.005_0.001_32_[1, 3, 5, 7]_last_epoch weights...
+Best model @ epoch 4
+Saving CLSTM_embed300_25t_sweep_rmsprop_0.0005_0.0001_128_[1, 2, 3, 5]_last_epoch weights...
+Best model @ epoch 4
+Saving CLSTM_embed300_25t_sweep_rmsprop_0.0005_1e-05_256_[2, 3, 4]_last_epoch weights...
+Best model @ epoch 4
+Saving CLSTM_embed300_25t_sweep_rmsprop_0.001_0.001_32_[1, 3, 5]_last_epoch weights...
+Best model @ epoch 6
+Saving CLSTM_embed300_25t_sweep_adamW_0.001_0.001_16_[2, 3, 4]_last_epoch weights...
+Best model @ epoch 2
+Saving CLSTM_embed300_25t_sweep_adamW_0.005_0.0001_16_[2, 3, 4]_last_epoch weights...
+Best model @ epoch 10
+Saving CLSTM_embed300_25t_sweep_rmsprop_0.0001_0.0001_64_[2, 3, 4]_last_epoch weights...
+Best model @ epoch 19
+Saving CLSTM_embed300_25t_sweep_rmsprop_0.0001_0_16_[1, 3, 5, 7]_last_epoch weights...
+Best model @ epoch 5
+Saving CLSTM_embed300_25t_sweep_adamW_0.001_0_100_[1, 3, 5, 7]_last_epoch weights...
+Best model @ epoch 5
+Saving CLSTM_embed300_25t_sweep_adamW_0.0001_0_128_[3, 4, 5]_last_epoch weights...
+Best model @ epoch 20
+Saving CLSTM_embed300_25t_sweep_adamW_0.0001_1e-05_16_[1, 2, 3]_last_epoch weights...
+Best model @ epoch 5
+Saving CLSTM_embed300_25t_sweep_adamW_0.0001_1e-05_256_[1, 3, 5]_last_epoch weights...
+Best model @ epoch 8
+Saving CLSTM_embed300_25t_sweep_rmsprop_0.0005_0_16_[2, 3, 4]_last_epoch weights...
+Best model @ epoch 4
+Saving CLSTM_embed300_25t_sweep_rmsprop_0.0005_0.0001_128_[1, 3, 5, 7]_last_epoch weights...
+Phase 2: Fetching winning configs from W&B...
+--> Best Optimizer: adamW | LR: 0.0001 | Num Channels: 256 | Kernel Sizes: [1, 3, 5]
+Phase 3: Finding optimal threshold...
+Loading weights from model_weights/CLSTM_embed300_25t_sweep_adamW_0.0001_1e-05_256_[1, 3, 5]_best.pth...
+Testing Thresholds for Peak F1...
+Threshold: 0.50 | Macro F1: 0.3426
+Threshold: 0.52 | Macro F1: 0.3499
+Threshold: 0.54 | Macro F1: 0.3575
+Threshold: 0.56 | Macro F1: 0.3641
+Threshold: 0.58 | Macro F1: 0.3702
+Threshold: 0.60 | Macro F1: 0.3754
+Threshold: 0.62 | Macro F1: 0.3828
+Threshold: 0.64 | Macro F1: 0.3886
+Threshold: 0.66 | Macro F1: 0.3929
+Threshold: 0.68 | Macro F1: 0.4002
+Threshold: 0.70 | Macro F1: 0.4092
+Threshold: 0.72 | Macro F1: 0.4157
+Threshold: 0.74 | Macro F1: 0.4225
+Threshold: 0.76 | Macro F1: 0.4283
+Threshold: 0.78 | Macro F1: 0.4370
+Threshold: 0.80 | Macro F1: 0.4422
+Threshold: 0.82 | Macro F1: 0.4469
+Threshold: 0.84 | Macro F1: 0.4541
+Threshold: 0.86 | Macro F1: 0.4587
+Threshold: 0.88 | Macro F1: 0.4679
+Threshold: 0.90 | Macro F1: 0.4741
+Threshold: 0.92 | Macro F1: 0.4800
+Threshold: 0.94 | Macro F1: 0.4688
+Threshold: 0.96 | Macro F1: 0.4003
+Threshold: 0.98 | Macro F1: 0.3216
+========================================
+Best MODEL FOUND
+Optimal Threshold: 0.92
+Peak Macro F1: 0.4800
+--> Optimal Threshold: 0.92 (Peak F1: 0.4800)
+Phase 4: Training Final Model on 100% Data...
+127656it [01:02, 2038.00it/s]
+31915it [00:20, 1579.03it/s]
+Best model @ epoch 5
+Saving FINAL_CLSTM_25t_glove_300_last_epoch weights...
+Phase 5: Evaluating Final Model on Test Set...
+63978it [00:39, 1639.53it/s]
+
+==================================================
+INITIATING FINAL TEST EVALUATION
+Threshold: 0.9200000166893005
+==================================================
+
+OVERALL PERFORMANCE
+Macro AUROC: 0.9273
+Macro F1:    0.5073
+
+PER-CLASS BREAKDOWN
+Class           | AUROC   | Precision | Recall  | F1-Score
+-------------------------------------------------------
+toxic           | 0.9185  | 0.4860    | 0.8039  | 0.6058
+severe_toxic    | 0.9529  | 0.2087    | 0.6676  | 0.3180
+obscene         | 0.9269  | 0.5704    | 0.7022  | 0.6295
+threat          | 0.8785  | 0.3922    | 0.4313  | 0.4108
+insult          | 0.9349  | 0.5272    | 0.6930  | 0.5988
+identity_hate   | 0.9523  | 0.4180    | 0.5660  | 0.4809
+=======================================================
+SUCCESSFULLY COMPLETED: CLSTM_25t_glove_300
+
+============================================================
+STARTING PIPELINE: CLSTM_50t_glove_100
+============================================================
+38296it [00:22, 1700.82it/s]
+9575it [00:04, 2002.68it/s]
+Phase 1: Running Sweep for CLSTM_50t_glove_100...
+Create sweep with ID: cln5wg4j
+Sweep URL: https://wandb.ai/zagros-devs/Toxic%20Comment%20Detection/sweeps/cln5wg4j
+Best model @ epoch 19
+Saving CLSTM_embed100_50t_sweep_rmsprop_0.0001_0.001_64_[1, 3, 5, 7, 11]_last_epoch weights...
+Best model @ epoch 16
+Saving CLSTM_embed100_50t_sweep_adamW_0.0005_1e-05_32_[2, 3, 4]_last_epoch weights...
+Best model @ epoch 14
+Saving CLSTM_embed100_50t_sweep_adamW_0.0001_1e-05_128_[1, 3, 5, 7]_last_epoch weights...
+Best model @ epoch 18
+Saving CLSTM_embed100_50t_sweep_adamW_0.0001_1e-05_50_[1, 2, 3]_last_epoch weights...
+Best model @ epoch 16
+Saving CLSTM_embed100_50t_sweep_rmsprop_0.0005_1e-05_16_[3, 5, 7]_last_epoch weights...
+Best model @ epoch 9
+Saving CLSTM_embed100_50t_sweep_rmsprop_0.0005_0_100_[1, 3, 5, 7, 11]_last_epoch weights...
+Best model @ epoch 19
+Saving CLSTM_embed100_50t_sweep_rmsprop_0.0005_0.001_16_[1, 3, 5, 7]_last_epoch weights...
+Best model @ epoch 19
+Saving CLSTM_embed100_50t_sweep_adamW_0.0001_1e-05_32_[3, 5, 7]_last_epoch weights...
+Best model @ epoch 15
+Saving CLSTM_embed100_50t_sweep_rmsprop_0.0005_0.0001_16_[1, 3, 5, 7, 11]_last_epoch weights...
+Best model @ epoch 20
+Saving CLSTM_embed100_50t_sweep_rmsprop_0.0001_0.0001_100_[1, 2, 3]_last_epoch weights...
+Best model @ epoch 20
+Saving CLSTM_embed100_50t_sweep_adamW_0.0005_0.0001_16_[2, 3, 4]_last_epoch weights...
+Best model @ epoch 11
+Saving CLSTM_embed100_50t_sweep_adamW_0.0005_0.0001_50_[1, 3, 5, 7, 11]_last_epoch weights...
+Best model @ epoch 10
+Saving CLSTM_embed100_50t_sweep_rmsprop_0.001_1e-05_256_[2, 3, 4]_last_epoch weights...
+Best model @ epoch 17
+Saving CLSTM_embed100_50t_sweep_rmsprop_0.0001_1e-05_64_[3, 4, 5]_last_epoch weights...
+Best model @ epoch 5
+Saving CLSTM_embed100_50t_sweep_adamW_0.001_1e-05_100_[3, 4, 5]_last_epoch weights...
+Best model @ epoch 5
+Saving CLSTM_embed100_50t_sweep_adamW_0.005_1e-05_32_[2, 3, 4]_last_epoch weights...
+Best model @ epoch 12
+Saving CLSTM_embed100_50t_sweep_rmsprop_0.0001_0_512_[3, 4, 5]_last_epoch weights...
+Best model @ epoch 16
+Saving CLSTM_embed100_50t_sweep_rmsprop_0.0005_0_100_[1, 2, 3]_last_epoch weights...
+Best model @ epoch 7
+Saving CLSTM_embed100_50t_sweep_adamW_0.0005_0_256_[1, 3, 5]_last_epoch weights...
+Best model @ epoch 6
+Saving CLSTM_embed100_50t_sweep_adamW_0.005_1e-05_16_[3, 4, 5]_last_epoch weights...
+Phase 2: Fetching winning configs from W&B...
+--> Best Optimizer: rmsprop | LR: 0.0001 | Num Channels: 64 | Kernel Sizes: [3, 4, 5]
+Phase 3: Finding optimal threshold...
+Loading weights from model_weights/CLSTM_embed100_50t_sweep_rmsprop_0.0001_1e-05_64_[3, 4, 5]_best.pth...
+Testing Thresholds for Peak F1...
+Threshold: 0.50 | Macro F1: 0.2991
+Threshold: 0.52 | Macro F1: 0.3027
+Threshold: 0.54 | Macro F1: 0.3065
+Threshold: 0.56 | Macro F1: 0.3108
+Threshold: 0.58 | Macro F1: 0.3148
+Threshold: 0.60 | Macro F1: 0.3168
+Threshold: 0.62 | Macro F1: 0.3188
+Threshold: 0.64 | Macro F1: 0.3210
+Threshold: 0.66 | Macro F1: 0.3239
+Threshold: 0.68 | Macro F1: 0.3272
+Threshold: 0.70 | Macro F1: 0.3297
+Threshold: 0.72 | Macro F1: 0.3337
+Threshold: 0.74 | Macro F1: 0.3369
+Threshold: 0.76 | Macro F1: 0.3418
+Threshold: 0.78 | Macro F1: 0.3470
+Threshold: 0.80 | Macro F1: 0.3543
+Threshold: 0.82 | Macro F1: 0.3569
+Threshold: 0.84 | Macro F1: 0.3545
+Threshold: 0.86 | Macro F1: 0.3542
+Threshold: 0.88 | Macro F1: 0.3559
+Threshold: 0.90 | Macro F1: 0.3541
+Threshold: 0.92 | Macro F1: 0.3429
+Threshold: 0.94 | Macro F1: 0.3207
+Threshold: 0.96 | Macro F1: 0.2232
+Threshold: 0.98 | Macro F1: 0.0149
+========================================
+Best MODEL FOUND
+Optimal Threshold: 0.82
+Peak Macro F1: 0.3569
+--> Optimal Threshold: 0.82 (Peak F1: 0.3569)
+Phase 4: Training Final Model on 100% Data...
+127656it [01:05, 1942.15it/s]
+31915it [00:20, 1534.67it/s]
+Best model @ epoch 13
+Saving FINAL_CLSTM_50t_glove_100_last_epoch weights...
+Phase 5: Evaluating Final Model on Test Set...
+63978it [00:42, 1515.87it/s]
+
+==================================================
+INITIATING FINAL TEST EVALUATION
+Threshold: 0.8199999928474426
+==================================================
+
+OVERALL PERFORMANCE
+Macro AUROC: 0.9389
+Macro F1:    0.3098
+
+PER-CLASS BREAKDOWN
+Class           | AUROC   | Precision | Recall  | F1-Score
+-------------------------------------------------------
+toxic           | 0.9196  | 0.4575    | 0.7453  | 0.5669
+severe_toxic    | 0.9621  | 0.0590    | 0.8747  | 0.1106
+obscene         | 0.9293  | 0.3588    | 0.7659  | 0.4887
+threat          | 0.9587  | 0.0474    | 0.8104  | 0.0896
+insult          | 0.9299  | 0.3203    | 0.7727  | 0.4528
+identity_hate   | 0.9336  | 0.0825    | 0.8188  | 0.1499
+=======================================================
+SUCCESSFULLY COMPLETED: CLSTM_50t_glove_100
+
+============================================================
+STARTING PIPELINE: CLSTM_50t_glove_300
+============================================================
+38296it [00:23, 1626.16it/s]
+9575it [00:05, 1892.59it/s]
+Phase 1: Running Sweep for CLSTM_50t_glove_300...
+Create sweep with ID: zdtc07po
+Sweep URL: https://wandb.ai/zagros-devs/Toxic%20Comment%20Detection/sweeps/zdtc07po
+Best model @ epoch 5
+Saving CLSTM_embed300_50t_sweep_adamW_0.001_1e-05_256_[1, 3, 5]_last_epoch weights...
+Best model @ epoch 4
+Saving CLSTM_embed300_50t_sweep_adamW_0.0005_0_512_[3, 4, 5]_last_epoch weights...
+Best model @ epoch 19
+Saving CLSTM_embed300_50t_sweep_rmsprop_0.0005_0.001_16_[1, 3, 5]_last_epoch weights...
+Best model @ epoch 15
+Saving CLSTM_embed300_50t_sweep_rmsprop_0.0001_0.001_32_[3, 4, 5]_last_epoch weights...
+Best model @ epoch 14
+Saving CLSTM_embed300_50t_sweep_adamW_0.0005_1e-05_16_[1, 3, 5, 7]_last_epoch weights...
+Best model @ epoch 6
+Saving CLSTM_embed300_50t_sweep_adamW_0.0005_0.0001_128_[1, 3, 5, 7, 11]_last_epoch weights...
+Best model @ epoch 19
+Saving CLSTM_embed300_50t_sweep_adamW_0.0001_0_50_[1, 3, 5, 7, 11]_last_epoch weights...
+Best model @ epoch 5
+Saving CLSTM_embed300_50t_sweep_adamW_0.0005_1e-05_256_[1, 3, 5]_last_epoch weights...
+Best model @ epoch 19
+Saving CLSTM_embed300_50t_sweep_rmsprop_0.0001_1e-05_16_[1, 3, 5]_last_epoch weights...
+Best model @ epoch 5
+Saving CLSTM_embed300_50t_sweep_rmsprop_0.001_0.0001_50_[1, 3, 5, 7, 11]_last_epoch weights...
+Best model @ epoch 12
+Saving CLSTM_embed300_50t_sweep_rmsprop_0.005_0.001_64_[1, 3, 5]_last_epoch weights...
+Best model @ epoch 5
+Saving CLSTM_embed300_50t_sweep_rmsprop_0.0005_0.0001_50_[1, 3, 5, 7]_last_epoch weights...
+Best model @ epoch 8
+Saving CLSTM_embed300_50t_sweep_adamW_0.001_0_64_[3, 4, 5]_last_epoch weights...
+Best model @ epoch 6
+Saving CLSTM_embed300_50t_sweep_rmsprop_0.001_0.0001_512_[3, 4, 5]_last_epoch weights...
+Best model @ epoch 8
+Saving CLSTM_embed300_50t_sweep_adamW_0.001_0.001_100_[1, 3, 5, 7]_last_epoch weights...
+Best model @ epoch 3
+Saving CLSTM_embed300_50t_sweep_adamW_0.001_0_100_[1, 3, 5]_last_epoch weights...
+Best model @ epoch 14
+Saving CLSTM_embed300_50t_sweep_adamW_0.0001_0_128_[1, 2, 3]_last_epoch weights...
+Best model @ epoch 3
+Saving CLSTM_embed300_50t_sweep_adamW_0.005_0_32_[1, 3, 5, 7, 11]_last_epoch weights...
+Best model @ epoch 7
+Saving CLSTM_embed300_50t_sweep_rmsprop_0.0005_0.0001_32_[2, 3, 4]_last_epoch weights...
+Best model @ epoch 11
+Saving CLSTM_embed300_50t_sweep_rmsprop_0.001_1e-05_32_[3, 4, 5]_last_epoch weights...
+Phase 2: Fetching winning configs from W&B...
+--> Best Optimizer: rmsprop | LR: 0.001 | Num Channels: 512 | Kernel Sizes: [3, 4, 5]
+Phase 3: Finding optimal threshold...
+Loading weights from model_weights/CLSTM_embed300_50t_sweep_rmsprop_0.001_0.0001_512_[3, 4, 5]_best.pth...
+Testing Thresholds for Peak F1...
+Threshold: 0.50 | Macro F1: 0.3535
+Threshold: 0.52 | Macro F1: 0.3576
+Threshold: 0.54 | Macro F1: 0.3632
+Threshold: 0.56 | Macro F1: 0.3681
+Threshold: 0.58 | Macro F1: 0.3712
+Threshold: 0.60 | Macro F1: 0.3759
+Threshold: 0.62 | Macro F1: 0.3805
+Threshold: 0.64 | Macro F1: 0.3852
+Threshold: 0.66 | Macro F1: 0.3902
+Threshold: 0.68 | Macro F1: 0.3934
+Threshold: 0.70 | Macro F1: 0.4001
+Threshold: 0.72 | Macro F1: 0.4056
+Threshold: 0.74 | Macro F1: 0.4102
+Threshold: 0.76 | Macro F1: 0.4144
+Threshold: 0.78 | Macro F1: 0.4196
+Threshold: 0.80 | Macro F1: 0.4242
+Threshold: 0.82 | Macro F1: 0.4291
+Threshold: 0.84 | Macro F1: 0.4336
+Threshold: 0.86 | Macro F1: 0.4411
+Threshold: 0.88 | Macro F1: 0.4466
+Threshold: 0.90 | Macro F1: 0.4551
+Threshold: 0.92 | Macro F1: 0.4112
+Threshold: 0.94 | Macro F1: 0.3915
+Threshold: 0.96 | Macro F1: 0.3851
+Threshold: 0.98 | Macro F1: 0.1795
+========================================
+Best MODEL FOUND
+Optimal Threshold: 0.90
+Peak Macro F1: 0.4551
+--> Optimal Threshold: 0.90 (Peak F1: 0.4551)
+Phase 4: Training Final Model on 100% Data...
+127656it [01:07, 1888.70it/s]
+31915it [00:21, 1451.00it/s]
+Best model @ epoch 6
+Saving FINAL_CLSTM_50t_glove_300_last_epoch weights...
+Phase 5: Evaluating Final Model on Test Set...
+63978it [00:42, 1499.58it/s]
+
+==================================================
+INITIATING FINAL TEST EVALUATION
+Threshold: 0.8999999761581421
+==================================================
+
+OVERALL PERFORMANCE
+Macro AUROC: 0.9637
+Macro F1:    0.4670
+
+PER-CLASS BREAKDOWN
+Class           | AUROC   | Precision | Recall  | F1-Score
+-------------------------------------------------------
+toxic           | 0.9505  | 0.4236    | 0.9039  | 0.5768
+severe_toxic    | 0.9689  | 0.1430    | 0.8392  | 0.2443
+obscene         | 0.9582  | 0.4747    | 0.8177  | 0.6007
+threat          | 0.9762  | 0.1727    | 0.7488  | 0.2806
+insult          | 0.9585  | 0.5330    | 0.7135  | 0.6102
+identity_hate   | 0.9698  | 0.3769    | 0.6966  | 0.4892
+=======================================================
+SUCCESSFULLY COMPLETED: CLSTM_50t_glove_300
+
+============================================================
+STARTING PIPELINE: CLSTM_100t_glove_100
+============================================================
+38296it [00:25, 1516.27it/s]
+9575it [00:05, 1614.14it/s]
+Phase 1: Running Sweep for CLSTM_100t_glove_100...
+Create sweep with ID: kmishvdz
+Sweep URL: https://wandb.ai/zagros-devs/Toxic%20Comment%20Detection/sweeps/kmishvdz
+Best model @ epoch 14
+Saving CLSTM_embed100_100t_sweep_rmsprop_0.005_1e-05_256_[3, 4, 5]_last_epoch weights...
+Best model @ epoch 15
+Saving CLSTM_embed100_100t_sweep_rmsprop_0.0005_0.0001_128_[1, 2, 3]_last_epoch weights...
+Best model @ epoch 6
+Saving CLSTM_embed100_100t_sweep_adamW_0.0005_0_512_[2, 3, 4]_last_epoch weights...
+Best model @ epoch 18
+Saving CLSTM_embed100_100t_sweep_adamW_0.0001_0.001_64_[3, 5, 7]_last_epoch weights...
+Best model @ epoch 7
+Saving CLSTM_embed100_100t_sweep_adamW_0.005_1e-05_16_[1, 2, 3]_last_epoch weights...
+Best model @ epoch 8
+Saving CLSTM_embed100_100t_sweep_rmsprop_0.001_0.001_64_[3, 5, 7]_last_epoch weights...
+Best model @ epoch 11
+Saving CLSTM_embed100_100t_sweep_adamW_0.005_0_32_[1, 3, 5]_last_epoch weights...
+Best model @ epoch 6
+Saving CLSTM_embed100_100t_sweep_adamW_0.001_0.0001_64_[1, 3, 5, 7, 11]_last_epoch weights...
+Best model @ epoch 18
+Saving CLSTM_embed100_100t_sweep_adamW_0.0001_0_256_[3, 4, 5]_last_epoch weights...
+Best model @ epoch 10
+Saving CLSTM_embed100_100t_sweep_adamW_0.001_0.001_50_[3, 4, 5]_last_epoch weights...
+Best model @ epoch 20
+Saving CLSTM_embed100_100t_sweep_rmsprop_0.0001_0.0001_16_[1, 3, 5, 7, 11]_last_epoch weights...
+Best model @ epoch 19
+Saving CLSTM_embed100_100t_sweep_rmsprop_0.001_1e-05_16_[1, 3, 5]_last_epoch weights...
+Best model @ epoch 12
+Saving CLSTM_embed100_100t_sweep_adamW_0.005_1e-05_100_[1, 2, 3]_last_epoch weights...
+Best model @ epoch 18
+Saving CLSTM_embed100_100t_sweep_adamW_0.001_0.0001_16_[1, 3, 5]_last_epoch weights...
+Best model @ epoch 8
+Saving CLSTM_embed100_100t_sweep_adamW_0.005_0.001_64_[1, 3, 5, 7, 11]_last_epoch weights...
+Best model @ epoch 20
+Saving CLSTM_embed100_100t_sweep_rmsprop_0.005_0.0001_64_[3, 5, 7]_last_epoch weights...
+Best model @ epoch 6
+Saving CLSTM_embed100_100t_sweep_adamW_0.0005_0_128_[1, 2, 3, 5]_last_epoch weights...
+Best model @ epoch 5
+Saving CLSTM_embed100_100t_sweep_rmsprop_0.001_1e-05_64_[1, 3, 5, 7]_last_epoch weights...
+Best model @ epoch 15
+Saving CLSTM_embed100_100t_sweep_rmsprop_0.005_0.001_128_[2, 3, 4]_last_epoch weights...
+Best model @ epoch 11
+Saving CLSTM_embed100_100t_sweep_adamW_0.001_0_32_[3, 4, 5]_last_epoch weights...
+Phase 2: Fetching winning configs from W&B...
+--> Best Optimizer: adamW | LR: 0.005 | Num Channels: 16 | Kernel Sizes: [1, 2, 3]
+Phase 3: Finding optimal threshold...
+Loading weights from model_weights/CLSTM_embed100_100t_sweep_adamW_0.005_1e-05_16_[1, 2, 3]_best.pth...
+Testing Thresholds for Peak F1...
+Threshold: 0.50 | Macro F1: 0.2671
+Threshold: 0.52 | Macro F1: 0.2722
+Threshold: 0.54 | Macro F1: 0.2769
+Threshold: 0.56 | Macro F1: 0.2812
+Threshold: 0.58 | Macro F1: 0.2857
+Threshold: 0.60 | Macro F1: 0.2903
+Threshold: 0.62 | Macro F1: 0.2953
+Threshold: 0.64 | Macro F1: 0.3003
+Threshold: 0.66 | Macro F1: 0.3060
+Threshold: 0.68 | Macro F1: 0.3121
+Threshold: 0.70 | Macro F1: 0.3177
+Threshold: 0.72 | Macro F1: 0.3226
+Threshold: 0.74 | Macro F1: 0.3284
+Threshold: 0.76 | Macro F1: 0.3349
+Threshold: 0.78 | Macro F1: 0.3409
+Threshold: 0.80 | Macro F1: 0.3482
+Threshold: 0.82 | Macro F1: 0.3554
+Threshold: 0.84 | Macro F1: 0.3633
+Threshold: 0.86 | Macro F1: 0.3717
+Threshold: 0.88 | Macro F1: 0.3818
+Threshold: 0.90 | Macro F1: 0.3917
+Threshold: 0.92 | Macro F1: 0.4012
+Threshold: 0.94 | Macro F1: 0.4203
+Threshold: 0.96 | Macro F1: 0.4130
+Threshold: 0.98 | Macro F1: 0.2993
+========================================
+Best MODEL FOUND
+Optimal Threshold: 0.94
+Peak Macro F1: 0.4203
+--> Optimal Threshold: 0.94 (Peak F1: 0.4203)
+Phase 4: Training Final Model on 100% Data...
+127656it [01:19, 1609.79it/s]
+31915it [00:23, 1354.16it/s]
+Best model @ epoch 5
+Saving FINAL_CLSTM_100t_glove_100_last_epoch weights...
+Phase 5: Evaluating Final Model on Test Set...
+63978it [00:48, 1325.38it/s]
+
+==================================================
+INITIATING FINAL TEST EVALUATION
+Threshold: 0.9399999976158142
+==================================================
+
+OVERALL PERFORMANCE
+Macro AUROC: 0.9449
+Macro F1:    0.3859
+
+PER-CLASS BREAKDOWN
+Class           | AUROC   | Precision | Recall  | F1-Score
+-------------------------------------------------------
+toxic           | 0.9283  | 0.5959    | 0.6259  | 0.6106
+severe_toxic    | 0.9664  | 0.0925    | 0.7847  | 0.1656
+obscene         | 0.9383  | 0.5412    | 0.6028  | 0.5704
+threat          | 0.9643  | 0.1217    | 0.5545  | 0.1997
+insult          | 0.9354  | 0.4966    | 0.5623  | 0.5274
+identity_hate   | 0.9366  | 0.1505    | 0.6124  | 0.2416
+=======================================================
+SUCCESSFULLY COMPLETED: CLSTM_100t_glove_100
+
+============================================================
+STARTING PIPELINE: CLSTM_100t_glove_300
+============================================================
+38296it [00:25, 1480.70it/s]
+9575it [00:05, 1740.60it/s]
+Phase 1: Running Sweep for CLSTM_100t_glove_300...
+Create sweep with ID: dto15yep
+Sweep URL: https://wandb.ai/zagros-devs/Toxic%20Comment%20Detection/sweeps/dto15yep
+Epoch 1/20:   1%|          | 1/150 [00:00<00:50,  2.93it/s, loss=1.14]/mnt/DOCS/projects/PycharmProjects/UNIBO/AI_in_Industry/.venv/lib/python3.11/site-packages/torch/autograd/graph.py:744: UserWarning: Plan failed with an OutOfMemoryError: CUDA out of memory. Tried to allocate 13.60 GiB. GPU  (Triggered internally at ../aten/src/ATen/native/cudnn/Conv_v8.cpp:924.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+Best model @ epoch 4
+Saving CLSTM_embed300_100t_sweep_rmsprop_0.0005_0.0001_128_[1, 3, 5, 7, 11]_last_epoch weights...
+Best model @ epoch 19
+Saving CLSTM_embed300_100t_sweep_adamW_0.0001_0_100_[1, 3, 5]_last_epoch weights...
+Best model @ epoch 9
+Saving CLSTM_embed300_100t_sweep_adamW_0.0005_0_100_[2, 3, 4]_last_epoch weights...
+Best model @ epoch 19
+Saving CLSTM_embed300_100t_sweep_rmsprop_0.001_1e-05_512_[1, 3, 5, 7, 11]_last_epoch weights...
+Best model @ epoch 12
+Saving CLSTM_embed300_100t_sweep_rmsprop_0.0005_0.001_32_[1, 3, 5, 7, 11]_last_epoch weights...
+Best model @ epoch 20
+Saving CLSTM_embed300_100t_sweep_adamW_0.0001_0.001_50_[1, 2, 3, 5]_last_epoch weights...
+Best model @ epoch 20
+Saving CLSTM_embed300_100t_sweep_rmsprop_0.005_0.0001_256_[1, 3, 5, 7]_last_epoch weights...
+Best model @ epoch 3
+Saving CLSTM_embed300_100t_sweep_adamW_0.005_0.0001_256_[1, 2, 3]_last_epoch weights...
+Best model @ epoch 20
+Saving CLSTM_embed300_100t_sweep_rmsprop_0.0001_0.0001_256_[1, 2, 3, 5]_last_epoch weights...
+Best model @ epoch 15
+Saving CLSTM_embed300_100t_sweep_rmsprop_0.0005_0_32_[1, 3, 5, 7]_last_epoch weights...
+Best model @ epoch 15
+Saving CLSTM_embed300_100t_sweep_rmsprop_0.0005_0_512_[1, 3, 5, 7, 11]_last_epoch weights...
+Best model @ epoch 15
+Saving CLSTM_embed300_100t_sweep_adamW_0.0001_0.001_32_[3, 4, 5]_last_epoch weights...
+Best model @ epoch 19
+Saving CLSTM_embed300_100t_sweep_adamW_0.001_1e-05_16_[1, 3, 5]_last_epoch weights...
+Best model @ epoch 9
+Saving CLSTM_embed300_100t_sweep_adamW_0.0005_0.001_512_[1, 2, 3]_last_epoch weights...
+Best model @ epoch 14
+Saving CLSTM_embed300_100t_sweep_adamW_0.005_0.0001_100_[3, 4, 5]_last_epoch weights...
+Best model @ epoch 18
+Saving CLSTM_embed300_100t_sweep_adamW_0.0001_1e-05_64_[1, 3, 5, 7]_last_epoch weights...
+Best model @ epoch 20
+Saving CLSTM_embed300_100t_sweep_adamW_0.0001_1e-05_512_[1, 2, 3]_last_epoch weights...
+Best model @ epoch 11
+Saving CLSTM_embed300_100t_sweep_rmsprop_0.0005_0.0001_512_[1, 3, 5, 7, 11]_last_epoch weights...
+Best model @ epoch 7
+Saving CLSTM_embed300_100t_sweep_adamW_0.0005_0.001_256_[1, 2, 3, 5]_last_epoch weights...
+Best model @ epoch 5
+Saving CLSTM_embed300_100t_sweep_rmsprop_0.005_0.001_32_[1, 2, 3]_last_epoch weights...
+Phase 2: Fetching winning configs from W&B...
+--> Best Optimizer: rmsprop | LR: 0.0005 | Num Channels: 32 | Kernel Sizes: [1, 3, 5, 7, 11]
+Phase 3: Finding optimal threshold...
+Loading weights from model_weights/CLSTM_embed300_100t_sweep_rmsprop_0.0005_0.001_32_[1, 3, 5, 7, 11]_best.pth...
+Testing Thresholds for Peak F1...
+Threshold: 0.50 | Macro F1: 0.3998
+Threshold: 0.52 | Macro F1: 0.4030
+Threshold: 0.54 | Macro F1: 0.4073
+Threshold: 0.56 | Macro F1: 0.4115
+Threshold: 0.58 | Macro F1: 0.4167
+Threshold: 0.60 | Macro F1: 0.4204
+Threshold: 0.62 | Macro F1: 0.4258
+Threshold: 0.64 | Macro F1: 0.4321
+Threshold: 0.66 | Macro F1: 0.4371
+Threshold: 0.68 | Macro F1: 0.4415
+Threshold: 0.70 | Macro F1: 0.4476
+Threshold: 0.72 | Macro F1: 0.4549
+Threshold: 0.74 | Macro F1: 0.4616
+Threshold: 0.76 | Macro F1: 0.4635
+Threshold: 0.78 | Macro F1: 0.4676
+Threshold: 0.80 | Macro F1: 0.4722
+Threshold: 0.82 | Macro F1: 0.4745
+Threshold: 0.84 | Macro F1: 0.4809
+Threshold: 0.86 | Macro F1: 0.4886
+Threshold: 0.88 | Macro F1: 0.4914
+Threshold: 0.90 | Macro F1: 0.4878
+Threshold: 0.92 | Macro F1: 0.4905
+Threshold: 0.94 | Macro F1: 0.4833
+Threshold: 0.96 | Macro F1: 0.4593
+Threshold: 0.98 | Macro F1: 0.3353
+========================================
+Best MODEL FOUND
+Optimal Threshold: 0.88
+Peak Macro F1: 0.4914
+--> Optimal Threshold: 0.88 (Peak F1: 0.4914)
+Phase 4: Training Final Model on 100% Data...
+127656it [01:33, 1370.23it/s]
+31915it [00:27, 1150.97it/s]
+Best model @ epoch 5
+Saving FINAL_CLSTM_100t_glove_300_last_epoch weights...
+Phase 5: Evaluating Final Model on Test Set...
+63978it [00:53, 1192.50it/s]
+
+==================================================
+INITIATING FINAL TEST EVALUATION
+Threshold: 0.8799999952316284
+==================================================
+
+OVERALL PERFORMANCE
+Macro AUROC: 0.9634
+Macro F1:    0.5099
+
+PER-CLASS BREAKDOWN
+Class           | AUROC   | Precision | Recall  | F1-Score
+-------------------------------------------------------
+toxic           | 0.9507  | 0.5442    | 0.8407  | 0.6607
+severe_toxic    | 0.9796  | 0.2118    | 0.7221  | 0.3276
+obscene         | 0.9597  | 0.5760    | 0.7483  | 0.6510
+threat          | 0.9691  | 0.2269    | 0.5829  | 0.3267
+insult          | 0.9563  | 0.5335    | 0.6951  | 0.6036
+identity_hate   | 0.9648  | 0.4477    | 0.5407  | 0.4898
+=======================================================
+SUCCESSFULLY COMPLETED: CLSTM_100t_glove_300

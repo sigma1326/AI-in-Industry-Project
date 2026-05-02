@@ -1,0 +1,39 @@
+Using device: cuda:0
+Loading data...
+Initializing Model...
+Starting Training Loop...
+Training: 100%|██████████| 998/998 [06:37<00:00,  2.51it/s, loss=0.0585]
+Evaluating: 100%|██████████| 250/250 [00:30<00:00,  8.27it/s]
+Training: 100%|██████████| 998/998 [06:33<00:00,  2.54it/s, loss=0.037]
+Evaluating: 100%|██████████| 250/250 [00:29<00:00,  8.39it/s]
+Training: 100%|██████████| 998/998 [06:33<00:00,  2.54it/s, loss=0.0481]
+Evaluating: 100%|██████████| 250/250 [00:29<00:00,  8.39it/s]
+
+Training Phase Complete. Logs saved to CSV.
+
+==================================================
+INITIATING FINAL TEST EVALUATION
+==================================================
+Loading best model from model_weights/bert_best.pth...
+
+==================================================
+INITIATING FINAL TEST EVALUATION
+Threshold: 0.5
+==================================================
+
+OVERALL PERFORMANCE
+Macro AUROC: 0.9813
+Macro F1:    0.5667
+
+PER-CLASS BREAKDOWN
+Class           | AUROC   | Precision | Recall  | F1-Score
+-------------------------------------------------------
+toxic           | 0.9709  | 0.5198    | 0.9089  | 0.6614
+severe_toxic    | 0.9845  | 0.3690    | 0.5259  | 0.4337
+obscene         | 0.9797  | 0.6028    | 0.8120  | 0.6919
+threat          | 0.9894  | 0.6067    | 0.2559  | 0.3600
+insult          | 0.9788  | 0.6276    | 0.7823  | 0.6965
+identity_hate   | 0.9849  | 0.6667    | 0.4775  | 0.5565
+=======================================================
+
+SUCCESSFULLY COMPLETED: BERT_base_cased pipeline

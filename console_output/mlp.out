@@ -1,0 +1,674 @@
+Using device: cuda:0
+Class Weights: [np.float64(9.433568719759382), np.float64(99.04451410658307), np.float64(17.886377086045687), np.float64(332.8305439330544), np.float64(19.25783927891329), np.float64(112.57366548042705)]
+
+============================================================
+STARTING PIPELINE: MLP_25t_glove_100
+============================================================
+38296it [00:21, 1815.11it/s]
+9575it [00:04, 2033.07it/s]
+Phase 1: Running Sweep for MLP_25t_glove_100...
+Create sweep with ID: p3rs5tl9
+Sweep URL: https://wandb.ai/zagros-devs/Toxic%20Comment%20Detection/sweeps/p3rs5tl9
+Best model @ epoch 5
+Saving MLP_embed100_25t_sweep_rmsprop_0.0001_1e-05_last_epoch weights...
+Best model @ epoch 3
+Saving MLP_embed100_25t_sweep_adamW_0.005_1e-05_last_epoch weights...
+Best model @ epoch 2
+Saving MLP_embed100_25t_sweep_adamW_0.0005_1e-05_last_epoch weights...
+Best model @ epoch 3
+Saving MLP_embed100_25t_sweep_adamW_0.0001_1e-05_last_epoch weights...
+Best model @ epoch 3
+Saving MLP_embed100_25t_sweep_rmsprop_0.0005_0_last_epoch weights...
+Best model @ epoch 5
+Saving MLP_embed100_25t_sweep_rmsprop_0.0001_0.001_last_epoch weights...
+Best model @ epoch 1
+Saving MLP_embed100_25t_sweep_rmsprop_0.0005_0.001_last_epoch weights...
+Best model @ epoch 2
+Saving MLP_embed100_25t_sweep_adamW_0.0005_0.001_last_epoch weights...
+Best model @ epoch 2
+Saving MLP_embed100_25t_sweep_rmsprop_0.001_0.001_last_epoch weights...
+Best model @ epoch 3
+Saving MLP_embed100_25t_sweep_adamW_0.0005_0.0001_last_epoch weights...
+Best model @ epoch 1
+Saving MLP_embed100_25t_sweep_rmsprop_0.005_1e-05_last_epoch weights...
+Best model @ epoch 2
+Saving MLP_embed100_25t_sweep_rmsprop_0.0005_0.0001_last_epoch weights...
+Best model @ epoch 7
+Saving MLP_embed100_25t_sweep_adamW_0.0001_0_last_epoch weights...
+Best model @ epoch 4
+Saving MLP_embed100_25t_sweep_adamW_0.0001_0.001_last_epoch weights...
+Best model @ epoch 1
+Saving MLP_embed100_25t_sweep_adamW_0.005_0_last_epoch weights...
+Best model @ epoch 2
+Saving MLP_embed100_25t_sweep_adamW_0.001_0_last_epoch weights...
+Best model @ epoch 2
+Saving MLP_embed100_25t_sweep_rmsprop_0.001_0_last_epoch weights...
+Best model @ epoch 2
+Saving MLP_embed100_25t_sweep_rmsprop_0.0005_1e-05_last_epoch weights...
+Best model @ epoch 2
+Saving MLP_embed100_25t_sweep_rmsprop_0.005_0.0001_last_epoch weights...
+Best model @ epoch 3
+Saving MLP_embed100_25t_sweep_rmsprop_0.0001_0_last_epoch weights...
+Phase 2: Fetching winning configs from W&B...
+--> Best Optimizer: rmsprop | LR: 0.0005
+Phase 3: Finding optimal threshold...
+Loading weights from model_weights/MLP_embed100_25t_sweep_rmsprop_0.0005_0.0001_best.pth...
+Testing Thresholds for Peak F1...
+Threshold: 0.50 | Macro F1: 0.2286
+Threshold: 0.52 | Macro F1: 0.2345
+Threshold: 0.54 | Macro F1: 0.2399
+Threshold: 0.56 | Macro F1: 0.2458
+Threshold: 0.58 | Macro F1: 0.2508
+Threshold: 0.60 | Macro F1: 0.2552
+Threshold: 0.62 | Macro F1: 0.2624
+Threshold: 0.64 | Macro F1: 0.2672
+Threshold: 0.66 | Macro F1: 0.2745
+Threshold: 0.68 | Macro F1: 0.2791
+Threshold: 0.70 | Macro F1: 0.2789
+Threshold: 0.72 | Macro F1: 0.2797
+Threshold: 0.74 | Macro F1: 0.2857
+Threshold: 0.76 | Macro F1: 0.2885
+Threshold: 0.78 | Macro F1: 0.2945
+Threshold: 0.80 | Macro F1: 0.2977
+Threshold: 0.82 | Macro F1: 0.3020
+Threshold: 0.84 | Macro F1: 0.3037
+Threshold: 0.86 | Macro F1: 0.3077
+Threshold: 0.88 | Macro F1: 0.3099
+Threshold: 0.90 | Macro F1: 0.3047
+Threshold: 0.92 | Macro F1: 0.3054
+Threshold: 0.94 | Macro F1: 0.2898
+Threshold: 0.96 | Macro F1: 0.2584
+Threshold: 0.98 | Macro F1: 0.1795
+========================================
+Best MODEL FOUND
+Optimal Threshold: 0.88
+Peak Macro F1: 0.3099
+--> Optimal Threshold: 0.88 (Peak F1: 0.3099)
+Phase 4: Training Final Model on 100% Data...
+127656it [00:58, 2174.34it/s]
+31915it [00:18, 1718.51it/s]
+Best model @ epoch 1
+Saving FINAL_MLP_25t_glove_100_last_epoch weights...
+Phase 5: Evaluating Final Model on Test Set...
+63978it [00:39, 1614.45it/s]
+
+==================================================
+INITIATING FINAL TEST EVALUATION
+Threshold: 0.8799999952316284
+==================================================
+
+OVERALL PERFORMANCE
+Macro AUROC: 0.8605
+Macro F1:    0.2639
+
+PER-CLASS BREAKDOWN
+Class           | AUROC   | Precision | Recall  | F1-Score
+-------------------------------------------------------
+toxic           | 0.8422  | 0.4483    | 0.4915  | 0.4689
+severe_toxic    | 0.8915  | 0.0699    | 0.3433  | 0.1162
+obscene         | 0.8519  | 0.3893    | 0.4180  | 0.4031
+threat          | 0.8719  | 0.0568    | 0.0616  | 0.0591
+insult          | 0.8537  | 0.4038    | 0.3729  | 0.3877
+identity_hate   | 0.8516  | 0.1127    | 0.2163  | 0.1481
+=======================================================
+SUCCESSFULLY COMPLETED: MLP_25t_glove_100
+
+============================================================
+STARTING PIPELINE: MLP_25t_glove_300
+============================================================
+38296it [00:21, 1747.56it/s]
+9575it [00:04, 2141.05it/s]
+Phase 1: Running Sweep for MLP_25t_glove_300...
+Create sweep with ID: 2ays12t0
+Sweep URL: https://wandb.ai/zagros-devs/Toxic%20Comment%20Detection/sweeps/2ays12t0
+Best model @ epoch 5
+Saving MLP_embed300_25t_sweep_rmsprop_0.005_0.001_last_epoch weights...
+Best model @ epoch 1
+Saving MLP_embed300_25t_sweep_adamW_0.0005_0.0001_last_epoch weights...
+Best model @ epoch 1
+Saving MLP_embed300_25t_sweep_adamW_0.001_0_last_epoch weights...
+Best model @ epoch 3
+Saving MLP_embed300_25t_sweep_adamW_0.0001_1e-05_last_epoch weights...
+Best model @ epoch 2
+Saving MLP_embed300_25t_sweep_adamW_0.0005_0_last_epoch weights...
+Best model @ epoch 2
+Saving MLP_embed300_25t_sweep_adamW_0.0001_0.001_last_epoch weights...
+Best model @ epoch 2
+Saving MLP_embed300_25t_sweep_adamW_0.005_0_last_epoch weights...
+Best model @ epoch 2
+Saving MLP_embed300_25t_sweep_rmsprop_0.0001_0.0001_last_epoch weights...
+Best model @ epoch 1
+Saving MLP_embed300_25t_sweep_adamW_0.0005_0.001_last_epoch weights...
+Best model @ epoch 2
+Saving MLP_embed300_25t_sweep_adamW_0.001_0.0001_last_epoch weights...
+Best model @ epoch 1
+Saving MLP_embed300_25t_sweep_rmsprop_0.001_0.001_last_epoch weights...
+Best model @ epoch 1
+Saving MLP_embed300_25t_sweep_rmsprop_0.0005_0_last_epoch weights...
+Best model @ epoch 3
+Saving MLP_embed300_25t_sweep_rmsprop_0.0001_0_last_epoch weights...
+Best model @ epoch 1
+Saving MLP_embed300_25t_sweep_adamW_0.001_0.001_last_epoch weights...
+Best model @ epoch 3
+Saving MLP_embed300_25t_sweep_rmsprop_0.0005_0.001_last_epoch weights...
+Best model @ epoch 3
+Saving MLP_embed300_25t_sweep_rmsprop_0.0001_1e-05_last_epoch weights...
+Best model @ epoch 7
+Saving MLP_embed300_25t_sweep_rmsprop_0.005_0.0001_last_epoch weights...
+Best model @ epoch 3
+Saving MLP_embed300_25t_sweep_rmsprop_0.0001_0.001_last_epoch weights...
+Best model @ epoch 2
+Saving MLP_embed300_25t_sweep_adamW_0.005_0.0001_last_epoch weights...
+Best model @ epoch 2
+Saving MLP_embed300_25t_sweep_rmsprop_0.001_1e-05_last_epoch weights...
+Phase 2: Fetching winning configs from W&B...
+--> Best Optimizer: adamW | LR: 0.005
+Phase 3: Finding optimal threshold...
+Loading weights from model_weights/MLP_embed300_25t_sweep_adamW_0.005_0_best.pth...
+Testing Thresholds for Peak F1...
+Threshold: 0.50 | Macro F1: 0.2653
+Threshold: 0.52 | Macro F1: 0.2803
+Threshold: 0.54 | Macro F1: 0.2957
+Threshold: 0.56 | Macro F1: 0.3105
+Threshold: 0.58 | Macro F1: 0.3232
+Threshold: 0.60 | Macro F1: 0.3369
+Threshold: 0.62 | Macro F1: 0.3466
+Threshold: 0.64 | Macro F1: 0.3561
+Threshold: 0.66 | Macro F1: 0.3665
+Threshold: 0.68 | Macro F1: 0.3717
+Threshold: 0.70 | Macro F1: 0.3796
+Threshold: 0.72 | Macro F1: 0.3847
+Threshold: 0.74 | Macro F1: 0.3943
+Threshold: 0.76 | Macro F1: 0.4031
+Threshold: 0.78 | Macro F1: 0.4080
+Threshold: 0.80 | Macro F1: 0.4174
+Threshold: 0.82 | Macro F1: 0.4246
+Threshold: 0.84 | Macro F1: 0.4279
+Threshold: 0.86 | Macro F1: 0.4229
+Threshold: 0.88 | Macro F1: 0.4260
+Threshold: 0.90 | Macro F1: 0.4205
+Threshold: 0.92 | Macro F1: 0.4084
+Threshold: 0.94 | Macro F1: 0.3945
+Threshold: 0.96 | Macro F1: 0.3518
+Threshold: 0.98 | Macro F1: 0.2661
+========================================
+Best MODEL FOUND
+Optimal Threshold: 0.84
+Peak Macro F1: 0.4279
+--> Optimal Threshold: 0.84 (Peak F1: 0.4279)
+Phase 4: Training Final Model on 100% Data...
+127656it [00:56, 2247.97it/s]
+31915it [00:18, 1692.17it/s]
+Best model @ epoch 2
+Saving FINAL_MLP_25t_glove_300_last_epoch weights...
+Phase 5: Evaluating Final Model on Test Set...
+63978it [00:34, 1833.16it/s]
+
+==================================================
+INITIATING FINAL TEST EVALUATION
+Threshold: 0.8399999737739563
+==================================================
+
+OVERALL PERFORMANCE
+Macro AUROC: 0.8900
+Macro F1:    0.3717
+
+PER-CLASS BREAKDOWN
+Class           | AUROC   | Precision | Recall  | F1-Score
+-------------------------------------------------------
+toxic           | 0.8875  | 0.5166    | 0.6837  | 0.5886
+severe_toxic    | 0.9379  | 0.1447    | 0.7384  | 0.2420
+obscene         | 0.9018  | 0.4337    | 0.6819  | 0.5302
+threat          | 0.8300  | 0.0504    | 0.4597  | 0.0909
+insult          | 0.8926  | 0.4178    | 0.6431  | 0.5066
+identity_hate   | 0.8900  | 0.1832    | 0.5267  | 0.2718
+=======================================================
+SUCCESSFULLY COMPLETED: MLP_25t_glove_300
+
+============================================================
+STARTING PIPELINE: MLP_50t_glove_100
+============================================================
+38296it [00:21, 1803.80it/s]
+9575it [00:04, 1971.84it/s]
+Phase 1: Running Sweep for MLP_50t_glove_100...
+Create sweep with ID: fba6obva
+Sweep URL: https://wandb.ai/zagros-devs/Toxic%20Comment%20Detection/sweeps/fba6obva
+Best model @ epoch 1
+Saving MLP_embed100_50t_sweep_adamW_0.001_0.0001_last_epoch weights...
+Best model @ epoch 1
+Saving MLP_embed100_50t_sweep_adamW_0.001_0.001_last_epoch weights...
+Best model @ epoch 1
+Saving MLP_embed100_50t_sweep_adamW_0.005_0_last_epoch weights...
+Best model @ epoch 6
+Saving MLP_embed100_50t_sweep_rmsprop_0.005_1e-05_last_epoch weights...
+Best model @ epoch 1
+Saving MLP_embed100_50t_sweep_rmsprop_0.005_0_last_epoch weights...
+Best model @ epoch 2
+Saving MLP_embed100_50t_sweep_adamW_0.0005_0.001_last_epoch weights...
+Best model @ epoch 2
+Saving MLP_embed100_50t_sweep_rmsprop_0.0005_0.001_last_epoch weights...
+Best model @ epoch 4
+Saving MLP_embed100_50t_sweep_rmsprop_0.0001_0.001_last_epoch weights...
+Best model @ epoch 3
+Saving MLP_embed100_50t_sweep_adamW_0.0001_0.0001_last_epoch weights...
+Best model @ epoch 1
+Saving MLP_embed100_50t_sweep_rmsprop_0.005_0.0001_last_epoch weights...
+Best model @ epoch 2
+Saving MLP_embed100_50t_sweep_rmsprop_0.001_0.0001_last_epoch weights...
+Best model @ epoch 3
+Saving MLP_embed100_50t_sweep_rmsprop_0.0005_0.0001_last_epoch weights...
+Best model @ epoch 2
+Saving MLP_embed100_50t_sweep_rmsprop_0.0005_0_last_epoch weights...
+Best model @ epoch 2
+Saving MLP_embed100_50t_sweep_adamW_0.005_0.001_last_epoch weights...
+Best model @ epoch 4
+Saving MLP_embed100_50t_sweep_adamW_0.0001_1e-05_last_epoch weights...
+Best model @ epoch 2
+Saving MLP_embed100_50t_sweep_adamW_0.001_1e-05_last_epoch weights...
+Best model @ epoch 1
+Saving MLP_embed100_50t_sweep_adamW_0.001_0_last_epoch weights...
+Best model @ epoch 4
+Saving MLP_embed100_50t_sweep_adamW_0.0001_0_last_epoch weights...
+Best model @ epoch 3
+Saving MLP_embed100_50t_sweep_adamW_0.005_0.0001_last_epoch weights...
+Best model @ epoch 2
+Saving MLP_embed100_50t_sweep_rmsprop_0.001_0_last_epoch weights...
+Phase 2: Fetching winning configs from W&B...
+--> Best Optimizer: adamW | LR: 0.001
+Phase 3: Finding optimal threshold...
+Loading weights from model_weights/MLP_embed100_50t_sweep_adamW_0.001_1e-05_best.pth...
+Testing Thresholds for Peak F1...
+Threshold: 0.50 | Macro F1: 0.2116
+Threshold: 0.52 | Macro F1: 0.2243
+Threshold: 0.54 | Macro F1: 0.2420
+Threshold: 0.56 | Macro F1: 0.2608
+Threshold: 0.58 | Macro F1: 0.2730
+Threshold: 0.60 | Macro F1: 0.2838
+Threshold: 0.62 | Macro F1: 0.2882
+Threshold: 0.64 | Macro F1: 0.2918
+Threshold: 0.66 | Macro F1: 0.2966
+Threshold: 0.68 | Macro F1: 0.3025
+Threshold: 0.70 | Macro F1: 0.3082
+Threshold: 0.72 | Macro F1: 0.3097
+Threshold: 0.74 | Macro F1: 0.3111
+Threshold: 0.76 | Macro F1: 0.3143
+Threshold: 0.78 | Macro F1: 0.3175
+Threshold: 0.80 | Macro F1: 0.3218
+Threshold: 0.82 | Macro F1: 0.3262
+Threshold: 0.84 | Macro F1: 0.3255
+Threshold: 0.86 | Macro F1: 0.3228
+Threshold: 0.88 | Macro F1: 0.3213
+Threshold: 0.90 | Macro F1: 0.2976
+Threshold: 0.92 | Macro F1: 0.2738
+Threshold: 0.94 | Macro F1: 0.2457
+Threshold: 0.96 | Macro F1: 0.1890
+Threshold: 0.98 | Macro F1: 0.1315
+========================================
+Best MODEL FOUND
+Optimal Threshold: 0.82
+Peak Macro F1: 0.3262
+--> Optimal Threshold: 0.82 (Peak F1: 0.3262)
+Phase 4: Training Final Model on 100% Data...
+127656it [01:01, 2069.79it/s]
+31915it [00:19, 1636.79it/s]
+Best model @ epoch 1
+Saving FINAL_MLP_50t_glove_100_last_epoch weights...
+Phase 5: Evaluating Final Model on Test Set...
+63978it [00:37, 1716.99it/s]
+
+==================================================
+INITIATING FINAL TEST EVALUATION
+Threshold: 0.8199999928474426
+==================================================
+
+OVERALL PERFORMANCE
+Macro AUROC: 0.8634
+Macro F1:    0.2686
+
+PER-CLASS BREAKDOWN
+Class           | AUROC   | Precision | Recall  | F1-Score
+-------------------------------------------------------
+toxic           | 0.8568  | 0.4082    | 0.5570  | 0.4711
+severe_toxic    | 0.9031  | 0.0768    | 0.4223  | 0.1300
+obscene         | 0.8685  | 0.3679    | 0.4820  | 0.4173
+threat          | 0.8330  | 0.0354    | 0.1185  | 0.0545
+insult          | 0.8656  | 0.3278    | 0.4914  | 0.3932
+identity_hate   | 0.8531  | 0.1074    | 0.2261  | 0.1456
+=======================================================
+SUCCESSFULLY COMPLETED: MLP_50t_glove_100
+
+============================================================
+STARTING PIPELINE: MLP_50t_glove_300
+============================================================
+38296it [00:21, 1753.17it/s]
+9575it [00:05, 1902.75it/s]
+Phase 1: Running Sweep for MLP_50t_glove_300...
+Create sweep with ID: gtlzakmj
+Sweep URL: https://wandb.ai/zagros-devs/Toxic%20Comment%20Detection/sweeps/gtlzakmj
+Best model @ epoch 1
+Saving MLP_embed300_50t_sweep_adamW_0.0005_0.0001_last_epoch weights...
+Best model @ epoch 1
+Saving MLP_embed300_50t_sweep_adamW_0.001_0_last_epoch weights...
+Best model @ epoch 2
+Saving MLP_embed300_50t_sweep_rmsprop_0.0001_0_last_epoch weights...
+Best model @ epoch 1
+Saving MLP_embed300_50t_sweep_adamW_0.001_0.001_last_epoch weights...
+Best model @ epoch 1
+Saving MLP_embed300_50t_sweep_rmsprop_0.0005_0.0001_last_epoch weights...
+Best model @ epoch 1
+Saving MLP_embed300_50t_sweep_adamW_0.0005_0_last_epoch weights...
+Best model @ epoch 2
+Saving MLP_embed300_50t_sweep_rmsprop_0.0001_0.0001_last_epoch weights...
+Best model @ epoch 1
+Saving MLP_embed300_50t_sweep_adamW_0.001_1e-05_last_epoch weights...
+Best model @ epoch 1
+Saving MLP_embed300_50t_sweep_rmsprop_0.005_0_last_epoch weights...
+Best model @ epoch 2
+Saving MLP_embed300_50t_sweep_adamW_0.005_1e-05_last_epoch weights...
+Best model @ epoch 2
+Saving MLP_embed300_50t_sweep_adamW_0.0001_0.0001_last_epoch weights...
+Best model @ epoch 1
+Saving MLP_embed300_50t_sweep_rmsprop_0.0001_0.001_last_epoch weights...
+Best model @ epoch 1
+Saving MLP_embed300_50t_sweep_rmsprop_0.001_0.001_last_epoch weights...
+Best model @ epoch 17
+Saving MLP_embed300_50t_sweep_rmsprop_0.005_1e-05_last_epoch weights...
+Best model @ epoch 2
+Saving MLP_embed300_50t_sweep_rmsprop_0.0005_1e-05_last_epoch weights...
+Best model @ epoch 1
+Saving MLP_embed300_50t_sweep_rmsprop_0.0005_0.001_last_epoch weights...
+Best model @ epoch 2
+Saving MLP_embed300_50t_sweep_adamW_0.0001_0_last_epoch weights...
+Best model @ epoch 9
+Saving MLP_embed300_50t_sweep_rmsprop_0.005_0.001_last_epoch weights...
+Best model @ epoch 1
+Saving MLP_embed300_50t_sweep_adamW_0.005_0.0001_last_epoch weights...
+Best model @ epoch 2
+Saving MLP_embed300_50t_sweep_rmsprop_0.001_1e-05_last_epoch weights...
+Phase 2: Fetching winning configs from W&B...
+--> Best Optimizer: rmsprop | LR: 0.005
+Phase 3: Finding optimal threshold...
+Loading weights from model_weights/MLP_embed300_50t_sweep_rmsprop_0.005_1e-05_best.pth...
+Testing Thresholds for Peak F1...
+Threshold: 0.50 | Macro F1: 0.2629
+Threshold: 0.52 | Macro F1: 0.2710
+Threshold: 0.54 | Macro F1: 0.2790
+Threshold: 0.56 | Macro F1: 0.2884
+Threshold: 0.58 | Macro F1: 0.2983
+Threshold: 0.60 | Macro F1: 0.3107
+Threshold: 0.62 | Macro F1: 0.3235
+Threshold: 0.64 | Macro F1: 0.3341
+Threshold: 0.66 | Macro F1: 0.3493
+Threshold: 0.68 | Macro F1: 0.3591
+Threshold: 0.70 | Macro F1: 0.3682
+Threshold: 0.72 | Macro F1: 0.3756
+Threshold: 0.74 | Macro F1: 0.3826
+Threshold: 0.76 | Macro F1: 0.3927
+Threshold: 0.78 | Macro F1: 0.4047
+Threshold: 0.80 | Macro F1: 0.4158
+Threshold: 0.82 | Macro F1: 0.4300
+Threshold: 0.84 | Macro F1: 0.4451
+Threshold: 0.86 | Macro F1: 0.4524
+Threshold: 0.88 | Macro F1: 0.4381
+Threshold: 0.90 | Macro F1: 0.4200
+Threshold: 0.92 | Macro F1: 0.3978
+Threshold: 0.94 | Macro F1: 0.3704
+Threshold: 0.96 | Macro F1: 0.3128
+Threshold: 0.98 | Macro F1: 0.2282
+========================================
+Best MODEL FOUND
+Optimal Threshold: 0.86
+Peak Macro F1: 0.4524
+--> Optimal Threshold: 0.86 (Peak F1: 0.4524)
+Phase 4: Training Final Model on 100% Data...
+127656it [01:03, 1994.89it/s]
+31915it [00:20, 1588.04it/s]
+Best model @ epoch 39
+Saving FINAL_MLP_50t_glove_300_last_epoch weights...
+Phase 5: Evaluating Final Model on Test Set...
+63978it [00:38, 1650.35it/s]
+
+==================================================
+INITIATING FINAL TEST EVALUATION
+Threshold: 0.8600000143051147
+==================================================
+
+OVERALL PERFORMANCE
+Macro AUROC: 0.9309
+Macro F1:    0.3407
+
+PER-CLASS BREAKDOWN
+Class           | AUROC   | Precision | Recall  | F1-Score
+-------------------------------------------------------
+toxic           | 0.9058  | 0.6889    | 0.3632  | 0.4756
+severe_toxic    | 0.9718  | 0.2932    | 0.4114  | 0.3424
+obscene         | 0.9202  | 0.6235    | 0.4056  | 0.4915
+threat          | 0.9297  | 0.0400    | 0.5640  | 0.0747
+insult          | 0.9182  | 0.5775    | 0.3131  | 0.4061
+identity_hate   | 0.9397  | 0.1860    | 0.3989  | 0.2537
+=======================================================
+SUCCESSFULLY COMPLETED: MLP_50t_glove_300
+
+============================================================
+STARTING PIPELINE: MLP_100t_glove_100
+============================================================
+38296it [00:25, 1502.74it/s]
+9575it [00:05, 1699.96it/s]
+Phase 1: Running Sweep for MLP_100t_glove_100...
+Create sweep with ID: 1ajgr2j1
+Sweep URL: https://wandb.ai/zagros-devs/Toxic%20Comment%20Detection/sweeps/1ajgr2j1
+Best model @ epoch 1
+Saving MLP_embed100_100t_sweep_adamW_0.001_0.0001_last_epoch weights...
+Best model @ epoch 2
+Saving MLP_embed100_100t_sweep_adamW_0.001_0_last_epoch weights...
+Best model @ epoch 2
+Saving MLP_embed100_100t_sweep_rmsprop_0.0001_1e-05_last_epoch weights...
+Best model @ epoch 1
+Saving MLP_embed100_100t_sweep_adamW_0.0005_0.001_last_epoch weights...
+Best model @ epoch 3
+Saving MLP_embed100_100t_sweep_adamW_0.0001_0_last_epoch weights...
+Best model @ epoch 2
+Saving MLP_embed100_100t_sweep_adamW_0.005_0_last_epoch weights...
+Best model @ epoch 1
+Saving MLP_embed100_100t_sweep_adamW_0.005_0.0001_last_epoch weights...
+Best model @ epoch 4
+Saving MLP_embed100_100t_sweep_adamW_0.005_0.001_last_epoch weights...
+Best model @ epoch 1
+Saving MLP_embed100_100t_sweep_adamW_0.005_1e-05_last_epoch weights...
+Best model @ epoch 2
+Saving MLP_embed100_100t_sweep_rmsprop_0.0001_0_last_epoch weights...
+Best model @ epoch 2
+Saving MLP_embed100_100t_sweep_rmsprop_0.001_1e-05_last_epoch weights...
+Best model @ epoch 3
+Saving MLP_embed100_100t_sweep_rmsprop_0.005_0_last_epoch weights...
+Best model @ epoch 1
+Saving MLP_embed100_100t_sweep_adamW_0.001_1e-05_last_epoch weights...
+Best model @ epoch 12
+Saving MLP_embed100_100t_sweep_rmsprop_0.005_0.001_last_epoch weights...
+Best model @ epoch 2
+Saving MLP_embed100_100t_sweep_rmsprop_0.0005_0.0001_last_epoch weights...
+Best model @ epoch 1
+Saving MLP_embed100_100t_sweep_rmsprop_0.001_0.001_last_epoch weights...
+Best model @ epoch 1
+Saving MLP_embed100_100t_sweep_adamW_0.0005_1e-05_last_epoch weights...
+Best model @ epoch 4
+Saving MLP_embed100_100t_sweep_rmsprop_0.005_0.0001_last_epoch weights...
+Best model @ epoch 3
+Saving MLP_embed100_100t_sweep_rmsprop_0.0001_0.0001_last_epoch weights...
+Best model @ epoch 4
+Saving MLP_embed100_100t_sweep_rmsprop_0.001_0.0001_last_epoch weights...
+Phase 2: Fetching winning configs from W&B...
+--> Best Optimizer: rmsprop | LR: 0.005
+Phase 3: Finding optimal threshold...
+Loading weights from model_weights/MLP_embed100_100t_sweep_rmsprop_0.005_0_best.pth...
+Testing Thresholds for Peak F1...
+Threshold: 0.50 | Macro F1: 0.2285
+Threshold: 0.52 | Macro F1: 0.2397
+Threshold: 0.54 | Macro F1: 0.2470
+Threshold: 0.56 | Macro F1: 0.2507
+Threshold: 0.58 | Macro F1: 0.2558
+Threshold: 0.60 | Macro F1: 0.2602
+Threshold: 0.62 | Macro F1: 0.2623
+Threshold: 0.64 | Macro F1: 0.2647
+Threshold: 0.66 | Macro F1: 0.2666
+Threshold: 0.68 | Macro F1: 0.2666
+Threshold: 0.70 | Macro F1: 0.2680
+Threshold: 0.72 | Macro F1: 0.2707
+Threshold: 0.74 | Macro F1: 0.2736
+Threshold: 0.76 | Macro F1: 0.2748
+Threshold: 0.78 | Macro F1: 0.2756
+Threshold: 0.80 | Macro F1: 0.2750
+Threshold: 0.82 | Macro F1: 0.2690
+Threshold: 0.84 | Macro F1: 0.2652
+Threshold: 0.86 | Macro F1: 0.2606
+Threshold: 0.88 | Macro F1: 0.2572
+Threshold: 0.90 | Macro F1: 0.2564
+Threshold: 0.92 | Macro F1: 0.2542
+Threshold: 0.94 | Macro F1: 0.2523
+Threshold: 0.96 | Macro F1: 0.2326
+Threshold: 0.98 | Macro F1: 0.1966
+========================================
+Best MODEL FOUND
+Optimal Threshold: 0.78
+Peak Macro F1: 0.2756
+--> Optimal Threshold: 0.78 (Peak F1: 0.2756)
+Phase 4: Training Final Model on 100% Data...
+127656it [01:14, 1711.68it/s]
+31915it [00:22, 1406.75it/s]
+Best model @ epoch 40
+Saving FINAL_MLP_100t_glove_100_last_epoch weights...
+Phase 5: Evaluating Final Model on Test Set...
+63978it [00:44, 1449.94it/s]
+
+==================================================
+INITIATING FINAL TEST EVALUATION
+Threshold: 0.7800000309944153
+==================================================
+
+OVERALL PERFORMANCE
+Macro AUROC: 0.8860
+Macro F1:    0.2412
+
+PER-CLASS BREAKDOWN
+Class           | AUROC   | Precision | Recall  | F1-Score
+-------------------------------------------------------
+toxic           | 0.8594  | 0.4185    | 0.5302  | 0.4678
+severe_toxic    | 0.9222  | 0.0383    | 0.7738  | 0.0730
+obscene         | 0.8704  | 0.2872    | 0.5955  | 0.3875
+threat          | 0.9116  | 0.0187    | 0.7915  | 0.0365
+insult          | 0.8722  | 0.2791    | 0.5737  | 0.3755
+identity_hate   | 0.8806  | 0.0579    | 0.6756  | 0.1067
+=======================================================
+SUCCESSFULLY COMPLETED: MLP_100t_glove_100
+
+============================================================
+STARTING PIPELINE: MLP_100t_glove_300
+============================================================
+38296it [00:25, 1478.32it/s]
+9575it [00:05, 1747.20it/s]
+Phase 1: Running Sweep for MLP_100t_glove_300...
+Create sweep with ID: jmrvkqsk
+Sweep URL: https://wandb.ai/zagros-devs/Toxic%20Comment%20Detection/sweeps/jmrvkqsk
+Best model @ epoch 2
+Saving MLP_embed300_100t_sweep_adamW_0.0005_1e-05_last_epoch weights...
+Best model @ epoch 2
+Saving MLP_embed300_100t_sweep_rmsprop_0.0005_1e-05_last_epoch weights...
+Best model @ epoch 1
+Saving MLP_embed300_100t_sweep_rmsprop_0.0005_0.001_last_epoch weights...
+Best model @ epoch 2
+Saving MLP_embed300_100t_sweep_adamW_0.001_0.001_last_epoch weights...
+Best model @ epoch 1
+Saving MLP_embed300_100t_sweep_adamW_0.0001_0.0001_last_epoch weights...
+Best model @ epoch 1
+Saving MLP_embed300_100t_sweep_adamW_0.005_0.0001_last_epoch weights...
+Best model @ epoch 1
+Saving MLP_embed300_100t_sweep_rmsprop_0.005_1e-05_last_epoch weights...
+Best model @ epoch 1
+Saving MLP_embed300_100t_sweep_rmsprop_0.0005_0_last_epoch weights...
+Best model @ epoch 1
+Saving MLP_embed300_100t_sweep_adamW_0.005_0_last_epoch weights...
+Best model @ epoch 2
+Saving MLP_embed300_100t_sweep_rmsprop_0.0001_0_last_epoch weights...
+Best model @ epoch 1
+Saving MLP_embed300_100t_sweep_rmsprop_0.0005_0.0001_last_epoch weights...
+Best model @ epoch 2
+Saving MLP_embed300_100t_sweep_adamW_0.0001_0_last_epoch weights...
+Best model @ epoch 1
+Saving MLP_embed300_100t_sweep_adamW_0.001_0_last_epoch weights...
+Best model @ epoch 1
+Saving MLP_embed300_100t_sweep_rmsprop_0.0001_1e-05_last_epoch weights...
+Best model @ epoch 1
+Saving MLP_embed300_100t_sweep_adamW_0.001_0.0001_last_epoch weights...
+Best model @ epoch 2
+Saving MLP_embed300_100t_sweep_rmsprop_0.001_0.0001_last_epoch weights...
+Best model @ epoch 3
+Saving MLP_embed300_100t_sweep_rmsprop_0.0001_0.0001_last_epoch weights...
+Best model @ epoch 2
+Saving MLP_embed300_100t_sweep_adamW_0.0001_0.001_last_epoch weights...
+Best model @ epoch 2
+Saving MLP_embed300_100t_sweep_rmsprop_0.001_0.001_last_epoch weights...
+Best model @ epoch 1
+Saving MLP_embed300_100t_sweep_adamW_0.0005_0_last_epoch weights...
+Phase 2: Fetching winning configs from W&B...
+--> Best Optimizer: rmsprop | LR: 0.001
+Phase 3: Finding optimal threshold...
+Loading weights from model_weights/MLP_embed300_100t_sweep_rmsprop_0.001_0.001_best.pth...
+Testing Thresholds for Peak F1...
+Threshold: 0.50 | Macro F1: 0.2057
+Threshold: 0.52 | Macro F1: 0.2137
+Threshold: 0.54 | Macro F1: 0.2233
+Threshold: 0.56 | Macro F1: 0.2335
+Threshold: 0.58 | Macro F1: 0.2424
+Threshold: 0.60 | Macro F1: 0.2509
+Threshold: 0.62 | Macro F1: 0.2613
+Threshold: 0.64 | Macro F1: 0.2743
+Threshold: 0.66 | Macro F1: 0.2866
+Threshold: 0.68 | Macro F1: 0.2983
+Threshold: 0.70 | Macro F1: 0.3114
+Threshold: 0.72 | Macro F1: 0.3226
+Threshold: 0.74 | Macro F1: 0.3342
+Threshold: 0.76 | Macro F1: 0.3464
+Threshold: 0.78 | Macro F1: 0.3584
+Threshold: 0.80 | Macro F1: 0.3714
+Threshold: 0.82 | Macro F1: 0.3829
+Threshold: 0.84 | Macro F1: 0.3986
+Threshold: 0.86 | Macro F1: 0.4115
+Threshold: 0.88 | Macro F1: 0.4240
+Threshold: 0.90 | Macro F1: 0.4369
+Threshold: 0.92 | Macro F1: 0.4453
+Threshold: 0.94 | Macro F1: 0.4456
+Threshold: 0.96 | Macro F1: 0.4392
+Threshold: 0.98 | Macro F1: 0.3867
+========================================
+Best MODEL FOUND
+Optimal Threshold: 0.94
+Peak Macro F1: 0.4456
+--> Optimal Threshold: 0.94 (Peak F1: 0.4456)
+Phase 4: Training Final Model on 100% Data...
+127656it [01:40, 1269.67it/s]
+31915it [00:27, 1150.09it/s]
+Best model @ epoch 1
+Saving FINAL_MLP_100t_glove_300_last_epoch weights...
+Phase 5: Evaluating Final Model on Test Set...
+63978it [00:52, 1217.69it/s]
+
+==================================================
+INITIATING FINAL TEST EVALUATION
+Threshold: 0.9399999976158142
+==================================================
+
+OVERALL PERFORMANCE
+Macro AUROC: 0.9347
+Macro F1:    0.4039
+
+PER-CLASS BREAKDOWN
+Class           | AUROC   | Precision | Recall  | F1-Score
+-------------------------------------------------------
+toxic           | 0.9206  | 0.6852    | 0.4732  | 0.5598
+severe_toxic    | 0.9709  | 0.2188    | 0.5967  | 0.3202
+obscene         | 0.9335  | 0.6373    | 0.4785  | 0.5466
+threat          | 0.9249  | 0.1573    | 0.3318  | 0.2134
+insult          | 0.9298  | 0.5896    | 0.4418  | 0.5051
+identity_hate   | 0.9287  | 0.1979    | 0.4691  | 0.2783
+=======================================================
+SUCCESSFULLY COMPLETED: MLP_100t_glove_300
