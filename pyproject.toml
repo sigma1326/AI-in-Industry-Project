@@ -1,0 +1,24 @@
+[project]
+name = "ai-in-industry"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+    "ipykernel>=7.2.0",
+    "ipywidgets>=8.1.8",
+    "iterative-stratification>=0.1.9",
+    "numpy>=2.4.4",
+    "pandas>=3.0.2",
+    "scikit-learn>=1.8.0",
+    "scipy>=1.17.1",
+    "spacy>=3.8.14",
+    "torch==2.3.0",
+    "torchmetrics>=1.9.0",
+    "torchtext>=0.18.0",
+    "transformers==4.46.3",
+    "wandb>=0.26.1",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.15.12",
+]
