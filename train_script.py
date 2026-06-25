@@ -148,7 +148,7 @@ for model_name, ModelClass in model_registry.items():
                 print(f"Phase 2: Fetching winning configs from W&B...")
                 sweep = api.sweep(f"zagros-devs/Toxic Comment Detection/{sweep_id}")
 
-                # W&B automatically finds the best run based on your sweep_config goal!
+                # W&B automatically finds the best run based on sweep_config goal!
                 best_run = sweep.best_run()
                 best_config = best_run.config
                 if best_config.get("num_channels", None):
